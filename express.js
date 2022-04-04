@@ -8,7 +8,7 @@ app.use(express,urlencoded({extended: false}))
 app.get('/',function(req, res) {
   res.send(`hello Welcome to our pages
 
-  <form action ="/action" method="post">
+  <form action ="/answer" method="POST">
   <h1>calculator</h1>
   <body>
   <p>What is the answer 2+2?</p>
@@ -18,13 +18,11 @@ app.get('/',function(req, res) {
   `)
 })
 
-app.post('/action',function(req,res){
+app.post('/answer',function(req,res){
    if(req.body.answer == 4){
      res.send(`<p>congrate it a correct answer</p>`)
    }else{
      res.send(`<p>it's a wrong answer</p>`)
    }
  })
-
-
-app.listen(3000)
+app.listen(5000);
